@@ -63,6 +63,7 @@ var rename       = require('gulp-rename');
 var lineec       = require('gulp-line-ending-corrector');
 var filter       = require('gulp-filter');
 var sourcemaps   = require('gulp-sourcemaps');
+var notify       = require('gulp-notify');
 
 /**
  * Tasks
@@ -99,7 +100,7 @@ gulp.task('styles', function () {
   .pipe( gulp.dest( styleDestination ) )
 
   .pipe( filter( '**/*.css' ) )
-  .pipe( notify( { message: 'TASK: "styles" Completed! 💯', onLast: true } ) )
+  .pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) )
 });
 
 gulp.task( 'vendorsJs', function() {
@@ -114,7 +115,7 @@ gulp.task( 'vendorsJs', function() {
   .pipe( uglify() )
   .pipe( lineec() )
   .pipe( gulp.dest( jsVendorDestination ) )
-  .pipe( notify( { message: 'TASK: "vendorsJs" Completed! 💯', onLast: true } ) );
+  .pipe( notify( { message: 'TASK: "vendorsJs" Completed!', onLast: true } ) );
 });
 
 gulp.task( 'customJS', function() {
@@ -129,7 +130,7 @@ gulp.task( 'customJS', function() {
   .pipe( uglify() )
   .pipe( lineec() )
   .pipe( gulp.dest( jsCustomDestination ) )
-  .pipe( notify( { message: 'TASK: "customJs" Completed! 💯', onLast: true } ) );
+  .pipe( notify( { message: 'TASK: "customJs" Completed!', onLast: true } ) );
 });
 
 gulp.task( 'images', function() {
@@ -141,7 +142,7 @@ gulp.task( 'images', function() {
         svgoPlugins: [{removeViewBox: false}]
       } ) )
   .pipe(gulp.dest( imagesDestination ))
-  .pipe( notify( { message: 'TASK: "images" Completed! 💯', onLast: true } ) );
+  .pipe( notify( { message: 'TASK: "images" Completed!', onLast: true } ) );
 });
 
 gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images'], function () {
