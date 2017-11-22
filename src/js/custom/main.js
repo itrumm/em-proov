@@ -18,9 +18,15 @@ var newsQuery = function() {
 
             var obj = newsList[i];
             var headline = obj['headline'];
-            var image = obj['thumbnail']['sources']['landscape']['large'];
+            var thumbnail = obj['thumbnail'];
             var id = obj['id'];
             var count = i + 1;
+
+            if (typeof thumbnail !== "undefined") {
+                imageSrc = obj['thumbnail']['sources']['landscape']['large'];
+            } else {
+                imageSrc = "";
+            }
 
             for (var j = 0; j < obj.articleLead.length; j++) {
                 var lead = obj.articleLead[j]['html'];
@@ -29,17 +35,16 @@ var newsQuery = function() {
             var newsItem = document.createElement('li');
             newsItem.className = 'news-list__item';
             newsItem.innerHTML =
-                '<a class="news-list__link" href="https://www.postimees.ee/' + id + '" target="_blank">' +
-                    '<div class="news-list__bg-gradient"></div>' +
-                    '<img class="news-list__image" src="' + image + '" alt="Lorem ipsum" />' +
-                    '<div class="news-list__summary">' +
-                        '<h2 class="news-list__title">' + headline + '</h2>' +
-                        lead +
-                    '</div>' +
-                    '<div class="news-list__nr-wrapper">' +
-                        '<p class="news-list__nr">' + count + '</p>' +
-                    '</div>' +
-                '</a>';
+                '<a class="news-list__link" href="https://www.postimees.ee/' + id + '" target="_blank"></a>' +
+                '<div class="news-list__bg-gradient"></div>' +
+                '<img class="news-list__image" src="' + imageSrc + '" alt="Lorem ipsum" />' +
+                '<div class="news-list__summary">' +
+                    '<h2 class="news-list__title">' + headline + '</h2>' +
+                    lead +
+                '</div>' +
+                '<div class="news-list__nr-wrapper">' +
+                    '<p class="news-list__nr">' + count + '</p>' +
+                '</div>';
 
             section.appendChild(newsItem);
 
