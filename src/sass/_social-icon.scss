@@ -1,0 +1,20 @@
+.social-icon {
+    height: 41px;
+    width: 41px;
+    display: inline-block;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    &--facebook {
+        background-image: url('../img/Facebook.png');
+    }
+
+    &--twitter {
+        background-image: url('../img/Twitter.png');
+    }
+
+    &--mail {
+        background-image: url('../img/Email.png');
+    }
+}

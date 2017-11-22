@@ -1,0 +1,14 @@
+.hamburger {
+
+    div {
+        width: 36px;
+        height: 6px;
+        margin-bottom: 8px;
+        border-radius: 2px;
+        background-color: #fff;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
