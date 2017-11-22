@@ -31,6 +31,7 @@
     }
 
     &__link {
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
@@ -55,8 +56,8 @@
             right: 0;
             bottom: 0;
             width: 30%;
-            height: 300px;
-            line-height: 300px;
+            height: 260px;
+            line-height: 260px;
         }
     }
 
@@ -107,22 +108,22 @@
         @media screen and (min-width: $breakpoint_desktop-large) {
             width: 70%;
         }
-    }
 
-    &__excerpt {
-        font-size: 1.25rem;
-        line-height: 1.5;
-        margin: 0;
-        padding: 15px;
-        background-color: #181818;
+        p {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            margin: 0;
+            padding: 15px;
+            background-color: #181818;
 
-        @media screen and (min-width: $breakpoint_tablet) {
-            padding: 30px;
-        }
+            @media screen and (min-width: $breakpoint_tablet) {
+                padding: 30px;
+            }
 
-        @media screen and (min-width: $breakpoint_desktop-large) {
-            font-size: 1.5rem;
-            height: 300px;
+            @media screen and (min-width: $breakpoint_desktop-large) {
+                font-size: 1.5rem;
+                height: 260px;
+            }
         }
     }
 
