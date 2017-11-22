@@ -1,0 +1,21 @@
+.scroll-icon {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .5);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+
+    &__inner {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $color_primary;
+        background-image: url('../img/nooleke.png');
+        background-size: 21px 13px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+}

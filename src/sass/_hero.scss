@@ -1,3 +1,61 @@
 .hero {
-    height: 100vh;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 84px);
+    position: relative;
+    background-image: url('../img/hero_bg.jpg');
+    background-size: cover;
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        background-image: url('../img/hero_bg_2x.jpg');
+    }
+
+    &__title {
+        position: relative;
+        color: #fff;
+        font-size: 2.5rem;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 5%;
+        z-index: 1;
+
+        @media screen and (min-width: $breakpoint_tablet) {
+            text-align: center;
+            font-size: 4rem;
+            margin: 0 10%;
+        }
+
+        @media screen and (min-width: $breakpoint_desktop-large) {
+            font-size: 7rem;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            max-width: 1300px;
+        }
+    }
+
+    &__bg-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00aeef+0,000000+100&0.1+0,0.5+60 */
+        background: -moz-linear-gradient(top,  rgba(0,174,239,0.1) 0%, rgba(0,70,96,0.5) 60%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,174,239,0.1) 0%,rgba(0,70,96,0.5) 60%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,174,239,0.1) 0%,rgba(0,70,96,0.5) 60%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a00aeef', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+    }
+
+    &__scroll-icon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 5%;
+        z-index: 1;
+    }
 }
